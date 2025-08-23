@@ -194,7 +194,6 @@ class _Footer extends StatelessWidget {
             _Link("GitHub", Profile.github),
             _Link("LinkedIn", Profile.linkedin),
             if (Profile.twitter.isNotEmpty) _Link("Twitter", Profile.twitter),
-            _Link("Source", Profile.portfolioRepo),
           ],
         ),
       ),

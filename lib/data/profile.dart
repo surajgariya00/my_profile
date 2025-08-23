@@ -15,7 +15,8 @@ class Profile {
   static const String linkedin = "https://www.linkedin.com/in/surajgariya/";
   static const String twitter = "https://twitter.com/surajgariya00";
   static const String resumeUrl = "https://github.com/surajgariya00";
-
+  static const String portfolioRepo =
+      "https://github.com/surajgariya00/my_profile";
   static const List<String> tech = [
     "Flutter & Dart",
     "React.js & Node.js",
