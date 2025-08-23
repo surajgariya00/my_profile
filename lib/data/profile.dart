@@ -1,20 +1,28 @@
 class Profile {
-  static const String name = "Your Name";
-  static const String role = "Flutter Developer";
-  static const String location = "Your City, Country";
-  static const String email = "you@example.com";
+  static const String name = "Suraj Gariya";
+  static const String role =
+      "Full-Stack Developer | DevOps Engineer | AWS Architect";
+  static const String location = "Nainital, Uttarakhand, India";
+  static const String email = "surajgariya00@gmail.com";
+
   static const String bio =
-      "I build fast, beautiful apps with Flutter. I love animations, clean architecture, and delightful UX.";
+      "Passionate about building scalable, high-performance applications with clean architecture and modern cloud practices. "
+      "Skilled in Flutter for cross-platform apps, DevOps for CI/CD automation, and AWS for cloud-native solutions. "
+      "I enjoy crafting elegant user experiences with animations, responsive design, and robust backend integrations.";
 
-  // Update these with your URLs
-  static const String github = "https://github.com/yourusername";
-  static const String linkedin = "https://linkedin.com/in/yourusername";
-  static const String twitter = "https://twitter.com/yourhandle";
-  static const String portfolioRepo =
-      "https://github.com/yourusername/flutter_portfolio";
-  static const String resumeUrl =
-      "https://example.com/your_resume.pdf";
+  // Professional profiles
+  static const String github = "https://github.com/surajgariya00";
+  static const String linkedin = "https://www.linkedin.com/in/surajgariya/";
+  static const String twitter = "https://twitter.com/surajgariya00";
+  static const String resumeUrl = "https://github.com/surajgariya00";
 
-  static const List<String> tech =
-      ["Flutter", "Dart", "Firebase", "REST", "Animations", "CI/CD"];
+  static const List<String> tech = [
+    "Flutter & Dart",
+    "React.js & Node.js",
+    "Firebase",
+    "REST & GraphQL APIs",
+    "DevOps (CI/CD, Docker, GitHub Actions)",
+    "AWS (EC2, S3, Lambda, IAM, DyanmoDb, CloudFront, SES, SNS, Amplify, Stepfunctions)",
+    "Animations & UX",
+  ];
 }
