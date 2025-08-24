@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_profile/widgets/tesseract_showcase.dart'
+    show TesseractShowcase;
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -64,6 +66,7 @@ class _HomePageState extends State<HomePage> {
   final aboutKey = GlobalKey();
   final contactKey = GlobalKey();
   final playgroundKey = GlobalKey();
+  final tesseractKey = GlobalKey();
 
   void _scrollTo(GlobalKey key) {
     final ctx = key.currentContext;
@@ -102,6 +105,11 @@ class _HomePageState extends State<HomePage> {
                   key: playgroundKey,
                   child: const _Section(child: PlaygroundSection()),
                 ),
+                KeyedSubtree(
+                  key: tesseractKey,
+                  child: const _Section(child: TesseractShowcase()),
+                ),
+
                 KeyedSubtree(
                   key: aboutKey,
                   child: const _Section(child: AboutSection()),
