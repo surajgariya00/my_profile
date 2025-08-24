@@ -11,6 +11,24 @@ const projects = <Project>[
     coverImageUrl:
         "https://images.unsplash.com/photo-1614555281536-6755500b7494?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ),
+  Project(
+    title: "Flutter Gamer Hub",
+    description:
+        "A modern, gamer-themed Flutter web arcade where you can list all the games you create, and save each game's progress locally using Hive (works on web via IndexedDB).",
+    tags: ["Flutter", "Animations", "State Management"],
+    repoUrl: "https://github.com/surajgariya00/flutter_gamer_hub",
+    liveUrl: "https://surajgariya00.github.io/flutter_gamer_hub/",
+    coverImageUrl:
+        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ),
+  Project(
+    title: "Wildfire Early Warning",
+    description: "Displays active wildfire events (NASA EONET) on a map.",
+    tags: ["Flutter", "flutter_map", "Animations", "State Management"],
+    repoUrl: "https://github.com/surajgariya00/wildfire_early_warning",
+    coverImageUrl:
+        "https://images.unsplash.com/photo-1602980085374-7e743fff3cc6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ),
 
   Project(
     title: "Crypton",
@@ -40,5 +58,14 @@ const projects = <Project>[
     repoUrl: "https://github.com/yourusername/travel_cards",
     coverImageUrl:
         "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ),
+  Project(
+    title: "Open Well",
+    description:
+        "A big, web+mobile Flutter app focused on wellness access with no backend — uses Hive for local storage (journal, reminders, moods) and dummy data for doctors, telemedicine, and resources. Optimized for web and mobile with a calm wellness theme.",
+    tags: ["Flutter Web", "Riverpod", "Design"],
+    repoUrl: "https://github.com/surajgariya00/openwell",
+    coverImageUrl:
+        "https://images.unsplash.com/photo-1473123091594-424e04babfe1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ),
 ];
