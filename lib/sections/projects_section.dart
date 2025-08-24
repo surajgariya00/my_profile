@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../widgets/section_title.dart';
 import '../widgets/tag_chip.dart';
 import '../models/project.dart';
@@ -11,7 +12,11 @@ class ProjectsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final crossAxisCount = width > 1200 ? 3 : width > 800 ? 2 : 1;
+    final crossAxisCount = width > 1200
+        ? 3
+        : width > 800
+        ? 2
+        : 1;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,14 +99,21 @@ class _ProjectCardState extends State<_ProjectCard> {
                 children: [
                   Image.network(widget.p.coverImageUrl, fit: BoxFit.cover),
                   Positioned(
-                    right: 10, top: 10,
+                    right: 10,
+                    top: 10,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 6,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(.45),
                         borderRadius: BorderRadius.circular(999),
                       ),
-                      child: Text(widget.p.tags.first, style: const TextStyle(color: Colors.white70)),
+                      child: Text(
+                        widget.p.tags.first,
+                        style: const TextStyle(color: Colors.white70),
+                      ),
                     ),
                   ),
                 ],
@@ -112,9 +124,18 @@ class _ProjectCardState extends State<_ProjectCard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.p.title, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700)),
+                  Text(
+                    widget.p.title,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                   const SizedBox(height: 6),
-                  Text(widget.p.description, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  Text(
+                    widget.p.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   const SizedBox(height: 10),
                   Wrap(children: [for (final t in widget.p.tags) TagChip(t)]),
                   const SizedBox(height: 6),
@@ -143,10 +164,10 @@ class _ProjectCardState extends State<_ProjectCard> {
     );
   }
 
-  void _launch(String url) async {
-    // Deferred import is overkill here; rely on url_launcher directly at top-level.
-    // ignore: use_build_context_synchronously
-    // Using Launcher in a simple way to keep this snippet concise.
-    // The actual call is placed in main.dart where url_launcher is configured.
+  Future<void> _launch(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $url');
+    }
   }
 }
