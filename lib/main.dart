@@ -57,7 +57,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scroll = ScrollController();
-
+  final GlobalKey overlayKey = GlobalKey();
   // Use these keys for Scrollable.ensureVisible targets
   final homeKey = GlobalKey();
   final projectsKey = GlobalKey();
@@ -81,6 +81,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       // 🔥 Wrap everything with the wormhole overlay
       body: WormholeOverlay(
+        key: overlayKey,
         child: Stack(
           children: [
             const Positioned.fill(child: AnimatedBackground()),
@@ -117,36 +118,35 @@ class _HomePageState extends State<HomePage> {
             // nav LAST so it’s on top and receives taps
             _GlassNav(
               onNavigate: (id) {
+                void warpTo(GlobalKey k) => (overlayKey.currentState as dynamic)
+                    ?.jump(() => _scrollTo(k));
+
                 switch (id) {
                   case 'home':
-                    WormholeOverlay.of(context).jump(() => _scrollTo(homeKey));
+                    warpTo(homeKey);
                     break;
                   case 'projects':
-                    WormholeOverlay.of(
-                      context,
-                    ).jump(() => _scrollTo(projectsKey));
+                    warpTo(projectsKey);
                     break;
                   case 'playground':
-                    WormholeOverlay.of(
-                      context,
-                    ).jump(() => _scrollTo(playgroundKey));
+                    warpTo(playgroundKey);
                     break;
                   case 'about':
-                    WormholeOverlay.of(context).jump(() => _scrollTo(aboutKey));
+                    warpTo(aboutKey);
                     break;
                   case 'contact':
-                    WormholeOverlay.of(
-                      context,
-                    ).jump(() => _scrollTo(contactKey));
+                    warpTo(contactKey);
                     break;
                 }
               },
             ),
+
             Positioned(
               right: 16,
               bottom: 16,
               child: FloatingActionButton(
-                onPressed: () => WormholeOverlay.of(context).jump(() {}),
+                onPressed: () =>
+                    (overlayKey.currentState as dynamic)?.jump(() {}),
                 child: const Icon(Icons.auto_awesome),
               ),
             ),
