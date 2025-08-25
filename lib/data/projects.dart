@@ -29,7 +29,15 @@ const projects = <Project>[
     coverImageUrl:
         "https://images.unsplash.com/photo-1602980085374-7e743fff3cc6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ),
-
+  Project(
+    title: "UniVerse",
+    description:
+        "Offline‑first campus superapp for web and mobile: Home feed (events + marketplace), Schedule (timetable), Events, Marketplace (rides/classifieds/lost&found)",
+    tags: ["Flutter", "FCM", "Animations", "State Management"],
+    repoUrl: "https://github.com/surajgariya00/universe",
+    coverImageUrl:
+        "https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ),
   Project(
     title: "Crypton",
     description:
